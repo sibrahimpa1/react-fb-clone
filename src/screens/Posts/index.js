@@ -9,8 +9,8 @@ import './styles.css';
 
 const Posts = ({ posts }) => {
 
-  const postToComponent = ({ image, title, text }) => {
-    return <Post image={image} title={title} text={text}/>
+  const postToComponent = ({ id, image, title, text }) => {
+    return <Post key={id} image={image} title={title} text={text}/>
   }
 
   return(

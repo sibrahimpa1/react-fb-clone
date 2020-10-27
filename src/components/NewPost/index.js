@@ -20,14 +20,12 @@ const NewPost = ( {addPost} ) => {
     e.preventDefault()
 
     if(text === "" || title === "" || isWhitespaceOnly(text) || isWhitespaceOnly(title)){
-      if(text === "") {
-        setIsTitleValid(false);
-      } else setIsTextValid(true);
-
       if(title === "") {
         setIsTitleValid(false);
       } else setIsTitleValid(true);
-
+      if(text === "") {
+        setIsTextValid(false);
+      } else setIsTextValid(true);
     }
     else{
       const newPost = {id: uuidv4(), title, text}
@@ -40,19 +38,22 @@ const NewPost = ( {addPost} ) => {
   }
 
   return(
+    <>
+    <h2>Add new post</h2>
     <form className="add-post" onSubmit={onSubmit}>
       <div>
         <label>Title</label>
-        <input value={title} type="text" onChange={(e) => setTitle(e.target.value)}/>
+        <input className={`input--${isTitleValid ? 'valid' : 'error'}`} value={title} type="text" onChange={(e) => setTitle(e.target.value)}/>
       </div>
 
       <div>
         <label>Text</label>
-        <textarea value={text} type="text" cols="10" rows="5" onChange={(e) => setText(e.target.value)}></textarea>
+        <textarea className={`input--${isTextValid ? 'valid' : 'error'}`} value={text} type="text" cols="10" rows="5" onChange={(e) => setText(e.target.value)}></textarea>
       </div>
 
       <input type="submit" placeholder="Add Post"/>
     </form>
+    </>
   )
 }
 

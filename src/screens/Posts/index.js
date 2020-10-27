@@ -15,7 +15,7 @@ const Posts = ({ posts }) => {
 
   return(
     <div className="posts">
-      <h1>All posts</h1>
+      <h2>All posts</h2>
       {posts.map(postToComponent)}
     </div>
   )

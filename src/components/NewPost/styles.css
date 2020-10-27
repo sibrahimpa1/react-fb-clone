@@ -1,7 +1,7 @@
 .add-post{
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   border: 5px solid #eaeaea;
   margin: 0 0 40px;
 }
@@ -18,20 +18,25 @@
 
 .add-post div input{
   padding: 15px 15px;
-  outline-color: #25c79f;
+  outline-color: #d9d9d9;
+  margin: 5px 0 0;
+  border: 1px solid #dcdbdb;
+  border-radius: 2px;
+  font-family: "Arial";
+  transition: all .3s linear;
+}
+
+.add-post div textarea{
+  padding: 15px 15px;
+  outline-color: #d9d9d9;
   margin: 5px 0 0;
   border: 1px solid #dcdbdb;
   border-radius: 2px;
   font-family: "Arial";
 }
 
-.add-post div textarea{
-  padding: 15px 15px;
-  outline-color: #25c79f;
-  margin: 5px 0 0;
-  border: 1px solid #dcdbdb;
-  border-radius: 2px;
-  font-family: "Arial";
+.add-post div .input--error{
+  border: 1px solid #d52323;
 }
 
 .add-post input[type="submit"]{
@@ -45,4 +50,5 @@
   width: 120px;
   border-radius: 3px;
   margin: 0 0 0 auto;
+  outline: none;
 }
